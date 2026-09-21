@@ -20,11 +20,11 @@
       --border-color: #E2E8F0;     
       
       --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-      --shadow-md: 0 10px 25px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.02);
-      --shadow-lg: 0 20px 35px -5px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 12px 30px -4px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+      --shadow-lg: 0 20px 40px -6px rgba(15, 23, 42, 0.1);
       
       --max-width: 1200px;         
-      --radius-lg: 16px;
+      --radius-lg: 20px;
       --radius-md: 12px;
     }
 
@@ -56,16 +56,7 @@
       color: var(--primary-hover);
     }
 
-    .topbar-container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 72px;
-    }
-
+    /* 顶部导航栏 */
     .topbar {
       position: sticky;
       top: 0;
@@ -76,11 +67,24 @@
       z-index: 1000;
     }
 
+    .topbar-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
     .wordmark {
-      font-weight: 700;
-      font-size: 1.25rem;
+      font-weight: 800;
+      font-size: 1.35rem;
       letter-spacing: -0.5px;
       color: var(--text-main);
+      background: linear-gradient(135deg, #0F172A 0%, #0D9488 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .nav-links {
@@ -99,19 +103,20 @@
       color: var(--primary);
     }
 
+    /* 重点优化：Hero 区域 (Title) */
     .hero {
       position: relative;
-      padding: 48px 0;
+      padding: 72px 0 88px;
       overflow: hidden;
       color: #ffffff;
-      background: radial-gradient(circle at 50% 30%, #134e4a 0%, #042f2e 60%, #090d16 100%);
-      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.24);
+      background: radial-gradient(circle at 50% 20%, #115e59 0%, #042f2e 55%, #090d16 100%);
+      box-shadow: 0 20px 40px rgba(4, 47, 46, 0.3);
     }
 
     .hero-wave {
       position: absolute;
       inset: 0;
-      opacity: 0.1;
+      opacity: 0.08;
       pointer-events: none;
     }
 
@@ -133,19 +138,36 @@
 
     .hero-card {
       width: 100%;
-      max-width: 768px;
-      padding: 32px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(16px);
+      max-width: 820px;
+      padding: 48px 40px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(20px);
       text-align: center;
-      transition: border-color 0.2s ease;
+      transition: border-color 0.3s ease;
     }
 
     .hero-card:hover {
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(45, 212, 191, 0.3);
+    }
+
+    /* 顶部小徽章 */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      margin-bottom: 20px;
+      background: rgba(20, 184, 166, 0.15);
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      border-radius: 999px;
+      color: #5eead4;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
     .hero-icon-row {
@@ -159,30 +181,30 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 10px;
+      padding: 12px;
       border: 1px solid rgba(45, 212, 191, 0.25);
-      border-radius: 16px;
-      background: rgba(20, 184, 166, 0.1);
-      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      background: rgba(20, 184, 166, 0.12);
+      box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);
     }
 
     .hero-title {
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       color: #ffffff;
-      font-size: 3rem;
-      font-weight: 800;
+      font-size: 3.5rem;
+      font-weight: 900;
       letter-spacing: -0.04em;
       line-height: 1.1;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     }
 
     .hero-subtitle {
-      max-width: 768px;
-      margin: 0 auto 24px;
-      color: rgba(204, 251, 241, 0.9);
-      font-size: 1.12rem;
+      max-width: 720px;
+      margin: 0 auto 32px;
+      color: rgba(226, 232, 240, 0.9);
+      font-size: 1.15rem;
       font-weight: 300;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .hero-subtitle-primary {
@@ -201,72 +223,74 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .hero-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 24px;
+      padding: 12px 28px;
       border: 1px solid transparent;
       border-radius: 999px;
-      font-size: 0.875rem;
+      font-size: 0.92rem;
       font-weight: 600;
-      transition: background 0.2s ease, transform 0.2s ease;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .hero-button:hover {
-      color: #ffffff;
       transform: translateY(-2px);
     }
 
     .hero-button-primary {
       color: #ffffff;
       background: #14b8a6;
-      box-shadow: 0 10px 20px rgba(19, 78, 74, 0.3);
+      box-shadow: 0 8px 20px rgba(13, 148, 136, 0.4);
     }
 
     .hero-button-primary:hover {
       background: #0d9488;
+      box-shadow: 0 12px 24px rgba(13, 148, 136, 0.5);
     }
 
     .hero-button-secondary {
       border-color: rgba(255, 255, 255, 0.2);
       color: #ffffff;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(8px);
     }
 
     .hero-button-secondary:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.35);
     }
 
+    /* 主体布局 */
     main {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 32px 100px;
     }
 
-    /* 大板块外部边界框 */
     .content-section {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
       padding: 48px;
-      margin-top: 40px;
+      margin-top: 48px;
       box-shadow: var(--shadow-md);
-      transition: box-shadow 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .content-section:hover {
       box-shadow: var(--shadow-lg);
+      border-color: #CBD5E1;
     }
 
     .section-header-row {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       margin-bottom: 12px;
     }
 
@@ -283,22 +307,22 @@
     }
 
     .section-icon-box svg {
-      width: 1rem;
-      height: 1rem;
+      width: 1.1rem;
+      height: 1.1rem;
     }
 
     .section-label {
-      font-size: 1rem;
+      font-size: 0.85rem;
       font-weight: 700;
       color: var(--primary);
       text-transform: uppercase;
-      letter-spacing: 1.2px;
+      letter-spacing: 1.5px;
       margin: 0;
     }
 
     .content-section h2 {
-      font-size: 1.75rem;
-      font-weight: 600;
+      font-size: 1.85rem;
+      font-weight: 700;
       letter-spacing: -0.5px;
       color: var(--text-main);
     }
@@ -306,18 +330,13 @@
     .section-heading {
       display: flex;
       flex-direction: column;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
       padding-bottom: 24px;
       border-bottom: 1px solid var(--border-color);
     }
 
-    /* Flat section content: the outer section provides the only frame. */
     .section-inner-box {
       position: relative;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      box-shadow: none;
       margin-bottom: 28px;
     }
 
@@ -332,18 +351,25 @@
       margin: 0;
     }
 
+    /* 方法亮点卡片 */
     .method-highlights {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 24px;
     }
 
     .method-highlight {
-      padding: 24px;
+      padding: 28px;
       border: 1px solid var(--border-color);
       border-top: 3px solid var(--primary);
       border-radius: var(--radius-md);
-      background: linear-gradient(180deg, var(--primary-light) 0%, #ffffff 42%);
+      background: linear-gradient(180deg, var(--primary-light) 0%, #ffffff 40%);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .method-highlight:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-sm);
     }
 
     .method-highlight-number {
@@ -375,10 +401,9 @@
     }
 
     .dataset-figure {
-      background: transparent;
-      border: 0;
+      background: #FAFAFA;
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      box-shadow: none;
       overflow: hidden;
       width: 100%;
       margin-top: 10px;
@@ -392,33 +417,34 @@
 
     .pipeline-figure,
     .dataset-overview-figure {
-      width: 90%;
+      width: 92%;
       margin-right: auto;
       margin-left: auto;
     }
 
     .dataset-figure figcaption {
-      padding: 16px 20px;
+      padding: 16px 24px;
       font-size: 0.92rem;
       color: var(--text-muted);
-      background: transparent;
-      border-top: 0;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-color);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
+    /* Demo 案例网格 */
     .demo-cases {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 36px;
     }
 
     .demo-case {
       background: #FAFAFA;
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 24px;
+      padding: 28px;
       box-shadow: var(--shadow-sm);
     }
 
@@ -441,7 +467,7 @@
 
     .case-heading h3 {
       margin: 0;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: var(--text-main);
     }
@@ -475,7 +501,7 @@
     .case-mean strong {
       display: block;
       color: var(--primary);
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-weight: 800;
       line-height: 1;
     }
@@ -491,7 +517,7 @@
     .video-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      gap: 16px;
     }
 
     .video-card {
@@ -512,15 +538,15 @@
 
     .video-card.ours {
       border: 2px solid var(--primary);
-      box-shadow: 0 4px 16px rgba(13, 148, 136, 0.12);
+      box-shadow: 0 6px 20px rgba(13, 148, 136, 0.15);
     }
 
     .video-heading {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 36px;
-      padding: 0 10px;
+      height: 38px;
+      padding: 0 12px;
       background: #FAFAFA;
       border-bottom: 1px solid var(--border-color);
     }
@@ -532,7 +558,7 @@
 
     .video-heading h4 {
       margin: 0;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 600;
       color: var(--text-main);
     }
@@ -543,7 +569,7 @@
       border-radius: 4px;
       color: #FFF;
       background: var(--primary);
-      font-size: 0.58rem;
+      font-size: 0.6rem;
       font-weight: 700;
       letter-spacing: 0.5px;
       text-transform: uppercase;
@@ -557,22 +583,23 @@
       background: #000;
     }
 
+    /* Decoupling 区域 */
     .decoupling-intro {
       max-width: 900px;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
       color: var(--text-muted);
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.75;
     }
 
     .decoupling-cases {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 36px;
     }
 
     .decoupling-case {
-      padding-top: 28px;
+      padding-top: 32px;
       border-top: 1px solid var(--border-color);
     }
 
@@ -583,14 +610,14 @@
 
     .decoupling-case h3 {
       margin-bottom: 16px;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 700;
     }
 
     .decoupling-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      gap: 20px;
     }
 
     .decoupling-video-card {
@@ -601,8 +628,8 @@
     }
 
     .decoupling-video-card h4 {
-      padding: 10px 14px;
-      font-size: 0.86rem;
+      padding: 12px 16px;
+      font-size: 0.88rem;
       font-weight: 700;
       border-bottom: 1px solid var(--border-color);
     }
@@ -625,15 +652,7 @@
       background: #000;
     }
 
-    .decoupling-prompt {
-      min-height: 76px;
-      padding: 12px 14px 14px;
-      color: var(--text-muted);
-      font-size: 0.82rem;
-      font-style: italic;
-      line-height: 1.55;
-    }
-
+    /* 页脚 */
     footer {
       text-align: center;
       padding: 60px 20px;
@@ -652,15 +671,15 @@
     @media (max-width: 1024px) {
       .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .method-highlights { grid-template-columns: 1fr; }
-      .dataset-overview-figure { width: 100%; }
+      .pipeline-figure, .dataset-overview-figure { width: 100%; }
     }
 
     @media (max-width: 640px) {
       .topbar-container, main { padding: 0 20px; }
-      .hero { padding: 40px 0; }
+      .hero { padding: 48px 0; }
       .hero-container { padding: 0 20px; }
-      .hero-card { padding: 24px; }
-      .hero-title { font-size: 2.25rem; }
+      .hero-card { padding: 32px 20px; }
+      .hero-title { font-size: 2.5rem; }
       .hero-subtitle { font-size: 1rem; }
       .nav-links { display: none; }
       .video-grid { grid-template-columns: 1fr; }
@@ -686,7 +705,7 @@
     </div>
   </nav>
 
-  <!-- 头图区 -->
+  <!-- 头图区 (Hero / Title 重点重构) -->
   <header id="top" class="hero">
     <div class="hero-wave">
       <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
@@ -697,10 +716,15 @@
     <div class="hero-container">
       <div class="hero-card">
         
-        <!-- 图标区：采用方案一标准现代 SVG 容器 -->
+        <!-- 标签徽章 -->
+        <div class="hero-badge">
+          <span>✨ Dance-to-Music Generation Project</span>
+        </div>
+
+        <!-- 图标区 -->
         <div class="hero-icon-row">
           <div class="hero-icon">
-            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="18" cy="30" r="3" fill="#2dd4bf"/>
               <path d="M18 12 C20 18 16 22 18 28" stroke="#2dd4bf" stroke-width="3" stroke-linecap="round"/>
               <path d="M8 20 C14 24 18 16 28 16" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
@@ -780,7 +804,7 @@
 
       <!-- 图表内嵌卡片 -->
       <div class="section-inner-box">
-        <figure class="dataset-figure pipeline-figure" style="margin-top: 0;">
+        <figure class="dataset-figure pipeline-figure">
           <img
             src="ft_local/pipe.png"
             alt="Overview of the RAMP generation pipeline"
@@ -807,7 +831,7 @@
         <h2>Dance100K</h2>
       </div>
 
-      <!-- 文字说明内嵌卡片 -->
+      <!-- 文字说明 -->
       <div class="section-inner-box">
         <p class="dataset-description">
           <strong>Dance100K</strong> is a large-scale and highly diverse dance–music dataset with rich
@@ -818,9 +842,9 @@
         </p>
       </div>
 
-      <!-- 图表内嵌卡片 -->
+      <!-- 图表 -->
       <div class="section-inner-box">
-        <figure class="dataset-figure dataset-overview-figure" style="margin-top: 0;">
+        <figure class="dataset-figure dataset-overview-figure">
           <img
             src="ft_local/dataset.png"
             alt="Overview of the Dance100K dataset"
@@ -849,6 +873,7 @@
       <div id="demoCases" class="demo-cases"></div>
     </section>
 
+    <!-- Decoupling Section -->
     <section id="decoupling" class="content-section">
       <div class="section-heading">
         <div class="section-header-row">
@@ -871,6 +896,7 @@
     <strong>RAMP</strong>
     <span>Dance-to-Music Generation · Research demo</span>
   </footer>
+
   <script src="video-loader.js"></script>
   <script src="demo.js"></script>
   <script src="decoupling.js"></script>
