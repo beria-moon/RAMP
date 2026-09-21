@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>舞蹈–音乐匹配主观评估</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="brand">DANCE · MUSIC · RATE</div>
+    <h1>舞蹈–音乐匹配评估</h1>
+    <p>观看舞蹈视频并聆听匿名生成音乐，分别完成四项 1–5 分评价。</p>
+  </header>
+
+  <main>
+    <section class="intro card">
+      <div>
+        <label for="participant">受试者编号</label>
+        <input id="participant" autocomplete="off">
+      </div>
+      <div class="progress-copy">
+        <strong id="progressText">已完成 0 / 90</strong>
+        <div class="progress"><span id="progressBar"></span></div>
+      </div>
+      <details>
+        <summary>查看评分说明</summary>
+        <p>请使用耳机，在安静环境下完整观看每段视频。方法顺序已随机化，候选字母不代表固定方法。</p>
+        <p><b>1</b> 很差/明显不匹配　<b>3</b> 一般/部分匹配　<b>5</b> 优秀/高度匹配。</p>
+      </details>
+    </section>
+
+    <nav id="sampleNav" class="sample-nav" aria-label="选择舞蹈样本"></nav>
+    <section class="workspace">
+      <aside class="candidate-panel card">
+        <div class="eyebrow">匿名候选</div>
+        <h2 id="sampleTitle">舞蹈样本 01</h2>
+        <p>同一舞蹈对应 9 段不同生成音乐。</p>
+        <div id="candidateNav" class="candidate-nav"></div>
+      </aside>
+
+      <article class="rating-panel card">
+        <div class="candidate-heading">
+          <div>
+            <div class="eyebrow">当前候选</div>
+            <h2 id="candidateTitle">候选 A</h2>
+          </div>
+          <span id="candidateStatus" class="status">待评分</span>
+        </div>
+        <video id="video" controls playsinline preload="metadata"></video>
+        <label class="watched">
+          <input id="watched" type="checkbox">我已完整观看并聆听此片段
+        </label>
+        <div id="dimensions" class="dimensions"></div>
+        <div class="actions">
+          <button id="previous" class="secondary">← 上一个</button>
+          <button id="next">保存并继续 →</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="finish card">
+      <div>
+        <h2>完成后导出结果</h2>
+        <p id="finishText">还需完成 90 组评分。</p>
+      </div>
+      <button id="download" disabled>下载评分 CSV</button>
+      <button id="reset" class="danger">重新填写</button>
+    </section>
+  </main>
+
+  <template id="dimensionTemplate">
+    <fieldset>
+      <legend></legend>
+      <p class="description"></p>
+      <div class="scale"></div>
+      <div class="anchors"><span>1 · 很差</span><span>3 · 一般</span><span>5 · 优秀</span></div>
+    </fieldset>
+  </template>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
