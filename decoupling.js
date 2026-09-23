@@ -31,6 +31,26 @@ const decouplingCases = [
     modifiedStyle: "Cinematic Orchestral",
     version: "lyrics-preserved",
   },
+  {
+    id: "b5bb2f3746694bd9b9af514e8333c767",
+    title: "Mandopop to Funk",
+    original:
+      "A dreamy Mandopop song featuring a soft female vocal, a smooth electronic beat, and atmospheric synth textures that create an intimate and romantic vibe.",
+    modified:
+      "A dreamy Funk song featuring a soft female vocal, a smooth bass-and-drum groove, and atmospheric guitar and keyboard textures creating an intimate, romantic vibe.",
+    modifiedStyle: "Funk",
+    version: "selected-50",
+  },
+  {
+    id: "ecb872577c7c4cb8ae3271a57da44e5d",
+    title: "Electronic Hip-hop to Funk",
+    original:
+      "A high-energy electronic hip-hop track featuring a driving, rhythmic beat and a catchy vocal sample that encourages movement.",
+    modified:
+      "A high-energy Funk track featuring a driving rhythmic beat, propulsive bass guitar, and a catchy vocal sample that encourages movement.",
+    modifiedStyle: "Funk",
+    version: "selected-50",
+  },
 ];
 
 function buildDecouplingVideo(item, variant) {
